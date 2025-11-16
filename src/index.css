@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 0 0% 40%;
+
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 0 0% 20%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 0% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 85%;
+    --input: 0 0% 85%;
+    --ring: 0 0% 0%;
+
+    --radius: 0.75rem;
+
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 20%), hsl(0 0% 40%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 10% / 0.1), hsl(0 0% 30% / 0.1));
+    --shadow-glow: 0 0 40px hsl(0 0% 0% / 0.3);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+    --primary-glow: 0 0% 70%;
+
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 0 0% 80%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 0% 70%;
+    --destructive-foreground: 0 0% 0%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 100%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 80%), hsl(0 0% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 90% / 0.1), hsl(0 0% 70% / 0.1));
+    --shadow-glow: 0 0 40px hsl(0 0% 100% / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-hidden;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply text-foreground;
+  }
+
+  .btn-hero {
+    @apply relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[var(--shadow-glow)];
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Typewriter effect 1 */
+   @keyframes typing {
+
+  /* WORD 1: "adnan" */
+  0%,   30% { content: ""; }
+  1.4%, 28.6% { content: "a"; }
+  2.8%, 27.2% { content: "ad"; }
+  4.2%, 25.8% { content: "adn"; }
+  5.6%, 24.4% { content: "adna"; }
+  7.0%, 23.0% { content: "adnan"; }
+
+  /* WORD 2: "a developer" */
+  40%,   90%   { content: ""; }
+  41.4%, 88.6% { content: "a"; }
+  42.8%, 87.2% { content: "a "; }
+  44.2%, 85.8% { content: "a d"; }
+  45.6%, 84.4% { content: "a de"; }
+  47.0%, 83.0% { content: "a dev"; }
+  48.4%, 81.6% { content: "a deve"; }
+  49.8%, 80.2% { content: "a devel"; }
+  51.2%, 78.8% { content: "a develo"; }
+  52.6%, 77.4% { content: "a develop"; }
+  54.0%, 76.0% { content: "a develope"; }
+  55.4%, 74.6% { content: "a developer"; }
+  }
+  
+
+   @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  
+  .typewriter {
+    --caret: currentcolor;
+  }
+  
+  .typewriter::before {
+    content: "";
+    animation: typing 9s infinite;
+  }
+  
+  .typewriter::after {
+    content: "";
+    border-right: 1px solid var(--caret);
+    animation: blink 0.7s linear infinite;
+  }
+  
+  .typewriter.thick::after {
+    border-right: 1ch solid var(--caret);
+  }
+  
+  .typewriter.nocaret::after {
+    border-right: 0;
+  }
+  
+  
+   @media (prefers-reduced-motion) {
+    .typewriter::after {
+      animation: none;
+    }
+    
+    @keyframes sequencePopup {
+      0%, 100% { content: "developer"; }
+      25% { content: "writer"; }
+      50% { content: "reader"; }
+      75% { content: "human"; }
+    }
+  
+    .typewriter::before {
+      content: "developer";
+      animation: sequencePopup 12s linear infinite;
+    }
+  }
+}

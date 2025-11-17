@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Server, BrainCircuit, Bot } from "lucide-react";
+import { Server, BrainCircuit, Bot, Github, Linkedin } from "lucide-react";
+import { FaXTwitter } from "react-icons/fa6";
 
 export const About = () => {
   const tools = [
@@ -58,6 +59,26 @@ export const About = () => {
                   </div>
                 </CardContent>
               </Card>
+
+              {/* Socials Card */}
+              <Card className="mt-8">
+                <CardHeader>
+                  <CardTitle>Socials</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-center gap-4">
+                    <a href="https://github.com/Hitchgernn" target="_blank" rel="noopener noreferrer" className="w-16 h-16 p-2 border border-border/50 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-primary/50">
+                      <Github className="w-8 h-8" />
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" className="w-16 h-16 p-2 border border-border/50 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-primary/50">
+                      <Linkedin className="w-8 h-8" />
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" className="w-16 h-16 p-2 border border-border/50 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-primary/50">
+                      <FaXTwitter className="w-8 h-8" />
+                    </a>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           
             {/* Right Column */}
@@ -108,6 +129,15 @@ export const About = () => {
                   <CardTitle>Skill & Expertise</CardTitle>
                 </CardHeader>
                 <CardContent>
+                  {/* Programming Lang */}
+                  <h3 className="text-md font-bold mb-4">
+                    Programming Language
+                  </h3>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    <Badge variant="secondary">C++</Badge>
+                    <Badge variant="secondary">Python</Badge>
+                    <Badge variant="secondary">Java Script</Badge>
+                  </div>
                   {/* Backend */}
                   <h3 className="text-md font-bold mb-4">
                     Backend Development
@@ -118,17 +148,13 @@ export const About = () => {
                     <Badge variant="secondary">REST APIs</Badge>
                     <Badge variant="secondary">PostgreSQL</Badge>
                     <Badge variant="secondary">Supabase</Badge>
-                    <Badge variant="secondary">Prisma ORM</Badge>
-                    <Badge variant="secondary">Authentication</Badge>
-                    <Badge variant="secondary">Caching</Badge>
                   </div>
           
                   {/* Machine Learning */}
                   <h3 className="text-md font-bold mb-4">
-                    Machine Learning
+                    ML & Data Science
                   </h3>
                   <div className="flex flex-wrap gap-2 mb-6">
-                    <Badge variant="secondary">Python</Badge>
                     <Badge variant="secondary">NumPy</Badge>
                     <Badge variant="secondary">Pandas</Badge>
                     <Badge variant="secondary">Scikit-Learn</Badge>
@@ -145,19 +171,16 @@ export const About = () => {
                     <Badge variant="secondary">LLM Providers (ChatGPT, Gemini, Mistral)</Badge>
                     <Badge variant="secondary">AI Agents</Badge>
                     <Badge variant="secondary">Prompt Engineering</Badge>
-                    <Badge variant="secondary">RAG (Retrieval-Augmented Generation)</Badge>
-                    <Badge variant="secondary">Vector Databases (Weaviate, Pinecone)</Badge>
-                    <Badge variant="secondary">Tool Routing & Calling</Badge>
-                    <Badge variant="secondary">Hugging Face Transformers</Badge>
-                    <Badge variant="secondary">Vercel AI SDK</Badge>
+                    <Badge variant="secondary">RAG</Badge>
+                    <Badge variant="secondary">Hugging Face</Badge>
                     <Badge variant="secondary">Next.js</Badge>
                     <Badge variant="secondary">Supabase</Badge>
-                    <Badge variant="secondary">Prisma</Badge>
                   </div>
                 </CardContent>
               </Card>
             </div>
-          </div>        </div>
+          </div>        
+        </div>
       </div>
     </div>
   );

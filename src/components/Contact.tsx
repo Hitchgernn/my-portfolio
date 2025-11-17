@@ -18,7 +18,7 @@ export const Contact = () => {
   };
 
   const socials = [
-    { icon: <Github className="h-6 w-6" />, label: "GitHub", href: "#" },
+    { icon: <Github className="h-6 w-6" />, label: "GitHub", href: "https://github.com/Hitchgernn" },
     { icon: <Linkedin className="h-6 w-6" />, label: "LinkedIn", href: "#" },
     { icon: <FaXTwitter className="h-6 w-6" />, label: "X", href: "#" },
   ];
@@ -26,12 +26,11 @@ export const Contact = () => {
   return (
     <div className="min-h-screen w-full bg-background flex items-center justify-center px-6 py-20">
       <div className="max-w-4xl mx-auto w-full">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-5xl font-bold mb-6">
+        <div className="text-center mb-16 animate-fade-in-up pt-6">
+          <h2 className="text-3xl font-bold mb-6">
             Get In <span className="text-gradient">Touch</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Have a project in mind or just want to chat? I'd love to hear from you.
+          <p className="text-lg text-foreground max-w-2xl mx-auto">
             Drop me a message and I'll get back to you as soon as possible.
           </p>
         </div>

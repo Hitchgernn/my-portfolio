@@ -5,22 +5,56 @@ import { Textarea } from "@/components/ui/textarea";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
 import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
 
 export const Contact = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
+    setIsSubmitting(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://formspree.io/f/xldayjjv", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message sent!",
+          description: "Thank you for reaching out. I'll get back to you soon.",
+        });
+        form.reset();
+      } else {
+        toast({
+          title: "Error",
+          description: "Something went wrong. Please try again later.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const socials = [
     { icon: <Github className="h-6 w-6" />, label: "GitHub", href: "https://github.com/Hitchgernn" },
     { icon: <Linkedin className="h-6 w-6" />, label: "LinkedIn", href: "#" },
-    { icon: <FaXTwitter className="h-6 w-6" />, label: "X", href: "#" },
+    { icon: <FaXTwitter className="h-6 w-6" />, label: "X", href: "https://x.com/hthgnn" },
   ];
 
   return (
@@ -54,30 +88,31 @@ export const Contact = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Name</label>
-                  <Input placeholder="Your name" required />
+                  <Input name="name" placeholder="Your name" required />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Email</label>
-                  <Input type="email" placeholder="your@email.com" required />
+                  <Input name="_replyto" type="email" placeholder="your@email.com" required />
                 </div>
               </div>
               
               <div className="space-y-2">
                 <label className="text-sm font-medium">Subject</label>
-                <Input placeholder="What's this about?" required />
+                <Input name="subject" placeholder="What's this about?" required />
               </div>
               
               <div className="space-y-2">
                 <label className="text-sm font-medium">Message</label>
                 <Textarea
+                  name="message"
                   placeholder="Tell me about your project..."
                   className="min-h-[150px]"
                   required
                 />
               </div>
               
-              <Button type="submit" className="w-full btn-hero" size="lg">
-                Send Message
+              <Button type="submit" className="w-full btn-hero" size="lg" disabled={isSubmitting}>
+                {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </CardContent>

@@ -9,7 +9,7 @@ export const About = () => {
     { name: "GitHub", logoLight: "/logos/github-light.png", logoDark: "/logos/github-dark.png" },
     { name: "Git", logo: "/logos/git.png" },
     { name: "Figma", logo: "/logos/figma.png" },
-    { name: "Fedora", logo: "/logos/fedora.png" },
+    { name: "Fedora Linux", logo: "/logos/linux.png" },
     { name: "Jupyter", logo: "/logos/jupyter.png" },
   ];
 
@@ -73,7 +73,7 @@ export const About = () => {
                     <a href="#" target="_blank" rel="noopener noreferrer" className="w-16 h-16 p-2 border border-border/50 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-primary/50">
                       <Linkedin className="w-8 h-8" />
                     </a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" className="w-16 h-16 p-2 border border-border/50 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-primary/50">
+                    <a href="https://x.com/hthgnn" target="_blank" rel="noopener noreferrer" className="w-16 h-16 p-2 border border-border/50 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-primary/50">
                       <FaXTwitter className="w-8 h-8" />
                     </a>
                   </div>
@@ -169,7 +169,6 @@ export const About = () => {
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     <Badge variant="secondary">LLM Providers (ChatGPT, Gemini, Mistral)</Badge>
-                    <Badge variant="secondary">AI Agents</Badge>
                     <Badge variant="secondary">Prompt Engineering</Badge>
                     <Badge variant="secondary">RAG</Badge>
                     <Badge variant="secondary">Hugging Face</Badge>

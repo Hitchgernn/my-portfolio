@@ -6,6 +6,9 @@ bun.lockb
 dist/
 .vite/
 
+# Vercel
+.vercel/
+
 # Environment
 .env
 .env.local

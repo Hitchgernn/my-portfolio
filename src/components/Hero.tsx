@@ -1,27 +1,25 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail } from "lucide-react";
-import * as THREE from "three"; // Import THREE to get its type
+import { useTheme } from "@/components/ThemeProvider";
+import * as THREE from "three";
 
-interface HeroProps {
-  onNavigate: (section: string) => void;
-}
-
+// Vanta.js types - these can be moved to a separate types file if desired
 interface VantaEffect {
   destroy: () => void;
-  // Add other properties if needed, based on Vanta.js API
 }
 
 interface VantaOptions {
   el: HTMLDivElement | null;
-  THREE: typeof THREE; // Use typeof THREE for type safety
+  THREE: typeof THREE;
   mouseControls: boolean;
   touchControls: boolean;
   gyroControls: boolean;
   minHeight: number;
   minWidth: number;
   scale: number;
-  scaleMobile: 1.0,
+  scaleMobile: number;
   color: number;
   color2: number;
   size: number;
@@ -32,30 +30,14 @@ interface Vanta {
   default: (options: VantaOptions) => VantaEffect;
 }
 
-export const Hero = ({ onNavigate }: HeroProps) => {
+export const Hero = () => {
+  const { theme } = useTheme();
+  const navigate = useNavigate();
   const vantaRef = useRef<HTMLDivElement>(null);
   const vantaEffect = useRef<VantaEffect | null>(null);
-  const [theme, setTheme] = useState<"light" | "dark" | null>(null);
 
   useEffect(() => {
-    const currentTheme = document.documentElement.classList.contains("dark") ? "dark" : "light";
-    setTheme(currentTheme);
-    
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.attributeName === "class") {
-          setTheme(document.documentElement.classList.contains("dark") ? "dark" : "light");
-        }
-      });
-    });
-
-    observer.observe(document.documentElement, { attributes: true });
-
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (theme === null) {
+    if (!theme) {
       return;
     }
 
@@ -63,8 +45,6 @@ export const Hero = ({ onNavigate }: HeroProps) => {
       vantaEffect.current.destroy();
     }
     if (vantaRef.current) {
-      // Dynamically import THREE and Vanta
-      // The import "three" above is for type inference, not for runtime loading
       import("three").then((THREE_RUNTIME) => {
         // @ts-expect-error: window.THREE is a global variable required by Vanta.js
         window.THREE = THREE_RUNTIME;
@@ -72,7 +52,7 @@ export const Hero = ({ onNavigate }: HeroProps) => {
         import("vanta/dist/vanta.globe.min.js").then((VANTA: Vanta) => {
           vantaEffect.current = VANTA.default({
             el: vantaRef.current,
-            THREE: THREE_RUNTIME, // Use the runtime imported THREE
+            THREE: THREE_RUNTIME,
             mouseControls: true,
             touchControls: true,
             gyroControls: false,
@@ -102,7 +82,7 @@ export const Hero = ({ onNavigate }: HeroProps) => {
         <h1 className="text-5xl md:text-7xl font-bold mb-8 animate-fade-in-up leading-tight" style={{ paddingLeft: '4rem' }}>
           <div className="mb-4">Hello,</div>
           <div className="mb-4">
-            I'm &nbsp;<span className="typewriter"></span>
+            <span className="typewriter"></span>
           </div>
         </h1>
         
@@ -112,7 +92,7 @@ export const Hero = ({ onNavigate }: HeroProps) => {
         
         <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up [animation-delay:400ms] opacity-0 [animation-fill-mode:forwards]" style={{ paddingLeft: '4rem' }}>
           <Button
-            onClick={() => onNavigate("projects")}
+            onClick={() => navigate("/projects")}
             size="lg"
             className="btn-hero group"
           >
@@ -121,7 +101,7 @@ export const Hero = ({ onNavigate }: HeroProps) => {
           </Button>
           
           <Button
-            onClick={() => onNavigate("contact")}
+            onClick={() => navigate("/contact")}
             variant="outline"
             size="lg"
             className="btn-hero"

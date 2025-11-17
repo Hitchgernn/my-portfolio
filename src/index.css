@@ -133,27 +133,34 @@ All colors MUST be HSL.
   /* Typewriter effect 1 */
    @keyframes typing {
 
-  /* WORD 1: "adnan" */
-  0%,   30% { content: ""; }
-  1.4%, 28.6% { content: "a"; }
-  2.8%, 27.2% { content: "ad"; }
-  4.2%, 25.8% { content: "adn"; }
-  5.6%, 24.4% { content: "adna"; }
-  7.0%, 23.0% { content: "adnan"; }
+    0%,    33.4% { content: ""; }
+    1.3%,  32.1% { content: "I"; }
+    2.6%,  30.8% { content: "I'"; }
+    3.9%,  29.5% { content: "I'm"; }
+    5.2%,  28.2% { content: "I'm "; }
+    6.5%,  26.9% { content: "I'm A"; }
+    7.8%,  25.6% { content: "I'm Ad"; }
+    9.1%,  24.3% { content: "I'm Adn"; }
+    10.4%, 23.0% { content: "I'm Adna"; }
+    11.7%, 21.7% { content: "I'm Adnan."; }
 
-  /* WORD 2: "a developer" */
-  40%,   90%   { content: ""; }
-  41.4%, 88.6% { content: "a"; }
-  42.8%, 87.2% { content: "a "; }
-  44.2%, 85.8% { content: "a d"; }
-  45.6%, 84.4% { content: "a de"; }
-  47.0%, 83.0% { content: "a dev"; }
-  48.4%, 81.6% { content: "a deve"; }
-  49.8%, 80.2% { content: "a devel"; }
-  51.2%, 78.8% { content: "a develo"; }
-  52.6%, 77.4% { content: "a develop"; }
-  54.0%, 76.0% { content: "a develope"; }
-  55.4%, 74.6% { content: "a developer"; }
+    /* WORD 2 — "I love building" */
+    43.4%, 89.8% { content: ""; }
+    44.7%, 88.5% { content: "I"; }
+    46.0%, 87.2% { content: "I "; }
+    47.3%, 85.9% { content: "I l"; }
+    48.6%, 84.6% { content: "I lo"; }
+    49.9%, 83.3% { content: "I lov"; }
+    51.2%, 82.0% { content: "I love"; }
+    52.5%, 80.7% { content: "I love "; }
+    53.8%, 79.4% { content: "I love b"; }
+    55.1%, 78.1% { content: "I love bu"; }
+    56.4%, 76.8% { content: "I love bui"; }
+    57.7%, 75.5% { content: "I love buil"; }
+    59.0%, 74.2% { content: "I love build"; }
+    60.3%, 72.9% { content: "I love buildi"; }
+    61.6%, 71.6% { content: "I love buildin"; }
+    62.9%, 70.3% { content: "I love building."; }
   }
   
 

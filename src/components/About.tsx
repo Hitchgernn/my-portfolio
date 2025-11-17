@@ -5,48 +5,67 @@ export const About = () => {
   const skills = [
     {
       icon: <Code2 className="h-8 w-8" />,
-      title: "Full Stack Development",
+      title: "Artificial Inteligence",
       description: "Building scalable web applications with modern technologies and best practices.",
     },
     {
       icon: <Palette className="h-8 w-8" />,
-      title: "UI/UX Design",
+      title: "Machine Learning",
       description: "Creating intuitive and beautiful interfaces that users love to interact with.",
     },
     {
       icon: <Zap className="h-8 w-8" />,
-      title: "Performance Optimization",
+      title: "Backend Development",
       description: "Ensuring lightning-fast load times and smooth user experiences.",
     },
   ];
 
   return (
     <div className="min-h-screen w-full bg-background flex items-center justify-center px-6 py-20">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-5xl font-bold mb-6">
-            About <span className="text-gradient">Me</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            I'm a passionate developer with a keen eye for design and a love for creating
-            innovative solutions. With years of experience in web development, I specialize
-            in building applications that are not only functional but also visually stunning.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8 mb-16 animate-fade-in-up [animation-delay:200ms] opacity-0 [animation-fill-mode:forwards]">
-          {skills.map((skill, index) => (
-            <Card
-              key={index}
-              className="border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 transition-all duration-300 hover:scale-105"
-            >
-              <CardContent className="p-6 text-center">
-                <div className="mb-4 flex justify-center">{skill.icon}</div>
-                <h3 className="text-xl font-semibold mb-3">{skill.title}</h3>
-                <p className="text-muted-foreground">{skill.description}</p>
-              </CardContent>
-            </Card>
-          ))}
+      <div className="max-w-6xl mx-auto pt-10">
+        <div className="mb-16 animate-fade-in-up">
+          <div className="md:flex md:items-start md:space-x-8">
+            {/* Image Section */}
+            <div className="md:w-1/4 flex-shrink-0 mb-8 md:mb-0">
+              <img
+                src="/light-mode.png"
+                alt="Adnan Abdul Majid (Dark Mode)"
+                className="rounded-lg shadow-lg w-full h-auto object-cover hidden dark:block"
+              />
+              <img
+                src="/dark-mode.png"
+                alt="Adnan Abdul Majid (Light Mode)"
+                className="rounded-lg shadow-lg w-full h-auto object-cover dark:hidden"
+              />
+            </div>
+            {/* Text Section */}
+            <div className="md:w-3/4 md:pt-2">
+              <h2 className="text-4xl font-bold mb-2">About Me</h2>
+              <p className="text-lg text-muted-foreground text-justify">
+                Hi, my name is Adnan Abdul Majid, but you can call me Adnan. I’m an undergraduate student at UGM 
+                majoring in Information Engineering. 
+                I started learning programming back in 10th grade, with C++ as my first language, 
+                and that moment sparked my curiosity for technology. Over time, I grew especially interested 
+                in AI, ML, and backend development, and I love exploring how these fields can be used to build meaningful, 
+                real-world solutions. I enjoy creating things, experimenting with new ideas, 
+                and constantly pushing myself to grow both technically and creatively.
+              </p>
+              <div className="grid md:grid-cols-3 gap-4 mt-8">
+                {skills.map((skill, index) => (
+                  <Card
+                    key={index}
+                    className="border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 transition-all duration-300 hover:scale-105"
+                  >
+                    <CardContent className="p-4 text-center">
+                      <div className="mb-2 flex justify-center">{skill.icon}</div>
+                      <h3 className="text-md font-semibold mb-1">{skill.title}</h3>
+                      <p className="text-sm text-muted-foreground">{skill.description}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-lg p-8 animate-fade-in-up [animation-delay:400ms] opacity-0 [animation-fill-mode:forwards]">

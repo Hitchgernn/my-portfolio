@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Routes, Route, Outlet } from "react-router-dom";
+import { Routes, Route, Outlet, useLocation } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
@@ -14,11 +14,19 @@ const queryClient = new QueryClient();
 
 // Layout component to persist Navbar across pages
 const Layout = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+
   return (
     <div className="relative w-full h-screen overflow-hidden">
       <Navbar />
       <main className="w-full h-full overflow-y-auto">
         <Outlet /> {/* Child routes will render here */}
+        {!isHomePage && (
+          <footer className="w-full py-4 text-center text-sm text-gray-500 dark:text-gray-400">
+            © 2025 Adnan Abdul Majid. All rights reserved.
+          </footer>
+        )}
       </main>
     </div>
   );

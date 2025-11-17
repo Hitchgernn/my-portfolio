@@ -6,17 +6,17 @@ export const About = () => {
     {
       icon: <Code2 className="h-8 w-8" />,
       title: "Artificial Inteligence",
-      description: "Building scalable web applications with modern technologies and best practices.",
+      description: "Building intelligent systems that solve real problems and automate complex tasks.",
     },
     {
       icon: <Palette className="h-8 w-8" />,
       title: "Machine Learning",
-      description: "Creating intuitive and beautiful interfaces that users love to interact with.",
+      description: "Designing models that learn from data and improve prediction accuracy over time.",
     },
     {
       icon: <Zap className="h-8 w-8" />,
       title: "Backend Development",
-      description: "Ensuring lightning-fast load times and smooth user experiences.",
+      description: "Creating fast, reliable, and scalable server-side systems that keep applications running smoothly.",
     },
   ];
 
@@ -28,12 +28,12 @@ export const About = () => {
             {/* Image Section */}
             <div className="md:w-1/4 flex-shrink-0 mb-8 md:mb-0">
               <img
-                src="/light-mode.png"
+                src="/dark.png"
                 alt="Adnan Abdul Majid (Dark Mode)"
                 className="rounded-lg shadow-lg w-full h-auto object-cover hidden dark:block"
               />
               <img
-                src="/dark-mode.png"
+                src="/light.png"
                 alt="Adnan Abdul Majid (Light Mode)"
                 className="rounded-lg shadow-lg w-full h-auto object-cover dark:hidden"
               />

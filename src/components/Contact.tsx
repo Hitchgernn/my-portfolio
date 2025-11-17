@@ -2,7 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
+import { FaXTwitter } from "react-icons/fa6";
 import { useToast } from "@/hooks/use-toast";
 
 export const Contact = () => {
@@ -19,7 +20,7 @@ export const Contact = () => {
   const socials = [
     { icon: <Github className="h-6 w-6" />, label: "GitHub", href: "#" },
     { icon: <Linkedin className="h-6 w-6" />, label: "LinkedIn", href: "#" },
-    { icon: <Twitter className="h-6 w-6" />, label: "Twitter", href: "#" },
+    { icon: <FaXTwitter className="h-6 w-6" />, label: "X", href: "#" },
   ];
 
   return (

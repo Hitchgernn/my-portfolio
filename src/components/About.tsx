@@ -1,32 +1,24 @@
-import { Code2, Palette, Zap } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Server, BrainCircuit, Bot } from "lucide-react";
 
 export const About = () => {
-  const skills = [
-    {
-      icon: <Code2 className="h-8 w-8" />,
-      title: "Artificial Inteligence",
-      description: "Building intelligent systems that solve real problems and automate complex tasks.",
-    },
-    {
-      icon: <Palette className="h-8 w-8" />,
-      title: "Machine Learning",
-      description: "Designing models that learn from data and improve prediction accuracy over time.",
-    },
-    {
-      icon: <Zap className="h-8 w-8" />,
-      title: "Backend Development",
-      description: "Creating fast, reliable, and scalable server-side systems that keep applications running smoothly.",
-    },
+  const tools = [
+    { name: "VSCode", logo: "/logos/vscode.png" },
+    { name: "GitHub", logoLight: "/logos/github-light.png", logoDark: "/logos/github-dark.png" },
+    { name: "Git", logo: "/logos/git.png" },
+    { name: "Figma", logo: "/logos/figma.png" },
+    { name: "Fedora", logo: "/logos/fedora.png" },
+    { name: "Jupyter", logo: "/logos/jupyter.png" },
   ];
 
   return (
     <div className="min-h-screen w-full bg-background flex items-center justify-center px-6 py-20">
       <div className="max-w-6xl mx-auto pt-10">
-        <div className="mb-16 animate-fade-in-up">
+        <div className="animate-fade-in-up">
           <div className="md:flex md:items-start md:space-x-8">
-            {/* Image Section */}
-            <div className="md:w-1/4 flex-shrink-0 mb-8 md:mb-0">
+            {/* Left Column */}
+            <div className="md:w-1/3 flex-shrink-0 mb-8 md:mb-0">
               <img
                 src="/dark.png"
                 alt="Adnan Abdul Majid (Dark Mode)"
@@ -37,50 +29,135 @@ export const About = () => {
                 alt="Adnan Abdul Majid (Light Mode)"
                 className="rounded-lg shadow-lg w-full h-auto object-cover dark:hidden"
               />
+              
+              {/* Education Card */}
+              <Card className="mt-8">
+                <CardHeader>
+                  <CardTitle>Education</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-start justify-between mb-4">
+                    <div>
+                      <h3 className="text-md font-bold">Universitas Gadjah Mada</h3>
+                      <p className="text-muted-foreground text-sm">Information Engineering</p>
+                    </div>
+                    <span className="text-muted-foreground text-sm text-right">2024 - Now</span>
+                  </div>
+                  <div className="flex items-start justify-between mb-4">
+                    <div>
+                      <h3 className="text-md font-bold">SMA Negeri 1 Kota Mungkid</h3>
+                      <p className="text-muted-foreground text-sm">Mathematics and Natural Science</p>
+                    </div>
+                    <span className="text-muted-foreground text-sm text-right">2021 - 2024</span>
+                  </div>
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <h3 className="text-md font-bold">SMP Negeri 1 Salaman</h3>
+                    </div>
+                    <span className="text-muted-foreground text-sm text-right">2018 - 2021</span>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
-            {/* Text Section */}
-            <div className="md:w-3/4 md:pt-2">
-              <h2 className="text-4xl font-bold mb-2">About Me</h2>
-              <p className="text-lg text-muted-foreground text-justify">
-                Hi, my name is Adnan Abdul Majid, but you can call me Adnan. I’m an undergraduate student at UGM 
-                majoring in Information Engineering. 
-                I started learning programming back in 10th grade, with C++ as my first language, 
-                and that moment sparked my curiosity for technology. Over time, I grew especially interested 
-                in AI, ML, and backend development, and I love exploring how these fields can be used to build meaningful, 
-                real-world solutions. I enjoy creating things, experimenting with new ideas, 
-                and constantly pushing myself to grow both technically and creatively.
-              </p>
-              <div className="grid md:grid-cols-3 gap-4 mt-8">
-                {skills.map((skill, index) => (
-                  <Card
-                    key={index}
-                    className="border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 transition-all duration-300 hover:scale-105"
-                  >
-                    <CardContent className="p-4 text-center">
-                      <div className="mb-2 flex justify-center">{skill.icon}</div>
-                      <h3 className="text-md font-semibold mb-1">{skill.title}</h3>
-                      <p className="text-sm text-muted-foreground">{skill.description}</p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
+          
+            {/* Right Column */}
+            <div className="md:w-2/3">
+              {/* About Me Card */}
+              <Card className="mb-8">
+                <CardHeader>
+                  <CardTitle>About Me</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-md text-foreground text-justify">
+                    Hi, my name is Adnan Abdul Majid, but you can call me Adnan. I’m an undergraduate student at UGM majoring in Information Engineering. 
+                    I started learning programming back in 10th grade, with C++ as my first language, 
+                    and that moment sparked my curiosity for technology. Over time, I grew especially interested 
+                    in <b> AI, ML, </b> and <b> backend development,</b> and I love exploring how these fields can be used to build meaningful, 
+                    real-world solutions. I enjoy creating things, experimenting with new ideas, 
+                    and constantly pushing myself to grow both technically and creatively.
+                  </p>
+                </CardContent>
+              </Card>
+          
+              {/* Tools Card */}
+              <Card className="mb-8">
+                <CardHeader>
+                  <CardTitle>Tools</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-4">
+                    {tools.map((tool) => (
+                      <div key={tool.name} className="w-16 h-16 p-2 border border-border/50 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-primary/50">
+                        {tool.name === 'GitHub' ? (
+                          <>
+                            <img src={tool.logoDark} alt={tool.name} className="w-8 h-8 object-contain hidden dark:block" />
+                            <img src={tool.logoLight} alt={tool.name} className="w-8 h-8 object-contain dark:hidden" />
+                          </>
+                        ) : (
+                          <img src={tool.logo} alt={tool.name} className="w-8 h-8 object-contain" />
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+          
+              {/* Skill & Expertise Card */}
+              <Card>
+                <CardHeader>
+                  <CardTitle>Skill & Expertise</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  {/* Backend */}
+                  <h3 className="text-md font-bold mb-4">
+                    Backend Development
+                  </h3>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    <Badge variant="secondary">Node.js</Badge>
+                    <Badge variant="secondary">Express.js</Badge>
+                    <Badge variant="secondary">REST APIs</Badge>
+                    <Badge variant="secondary">PostgreSQL</Badge>
+                    <Badge variant="secondary">Supabase</Badge>
+                    <Badge variant="secondary">Prisma ORM</Badge>
+                    <Badge variant="secondary">Authentication</Badge>
+                    <Badge variant="secondary">Caching</Badge>
+                  </div>
+          
+                  {/* Machine Learning */}
+                  <h3 className="text-md font-bold mb-4">
+                    Machine Learning
+                  </h3>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    <Badge variant="secondary">Python</Badge>
+                    <Badge variant="secondary">NumPy</Badge>
+                    <Badge variant="secondary">Pandas</Badge>
+                    <Badge variant="secondary">Scikit-Learn</Badge>
+                    <Badge variant="secondary">TensorFlow</Badge>
+                    <Badge variant="secondary">PyTorch</Badge>
+                    <Badge variant="secondary">NLP</Badge>
+                  </div>
+          
+                  {/* AI & Fullstack Engineering */}
+                  <h3 className="text-md font-bold mb-4">
+                    AI & Fullstack Engineering
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary">LLM Providers (ChatGPT, Gemini, Mistral)</Badge>
+                    <Badge variant="secondary">AI Agents</Badge>
+                    <Badge variant="secondary">Prompt Engineering</Badge>
+                    <Badge variant="secondary">RAG (Retrieval-Augmented Generation)</Badge>
+                    <Badge variant="secondary">Vector Databases (Weaviate, Pinecone)</Badge>
+                    <Badge variant="secondary">Tool Routing & Calling</Badge>
+                    <Badge variant="secondary">Hugging Face Transformers</Badge>
+                    <Badge variant="secondary">Vercel AI SDK</Badge>
+                    <Badge variant="secondary">Next.js</Badge>
+                    <Badge variant="secondary">Supabase</Badge>
+                    <Badge variant="secondary">Prisma</Badge>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
-          </div>
-        </div>
-
-        <div className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-lg p-8 animate-fade-in-up [animation-delay:400ms] opacity-0 [animation-fill-mode:forwards]">
-          <h3 className="text-2xl font-bold mb-4">My Journey</h3>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            My journey into web development began with a curiosity about how things work
-            on the internet. Over the years, I've honed my skills across the full stack,
-            from crafting pixel-perfect frontends to architecting robust backend systems.
-          </p>
-          <p className="text-muted-foreground leading-relaxed">
-            I believe in continuous learning and staying updated with the latest technologies.
-            When I'm not coding, you'll find me exploring new design trends, contributing to
-            open-source projects, or sharing my knowledge with the developer community.
-          </p>
-        </div>
+          </div>        </div>
       </div>
     </div>
   );

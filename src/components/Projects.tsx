@@ -5,9 +5,9 @@ import { ExternalLink, Github } from "lucide-react";
 export const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-featured online shopping platform with real-time inventory management and secure payment processing.",
-      tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
+      title: "Adnan's Portfolio",
+      description: "Gaktaulah.",
+      tech: ["React", "Node.js", "TypeScipt", "Tailwind CSS"],
       image: "bg-gradient-to-br from-muted to-muted/50",
     },
     {
@@ -15,18 +15,6 @@ export const Projects = () => {
       description: "Collaborative task management tool with real-time updates, team collaboration, and progress tracking.",
       tech: ["Vue.js", "Firebase", "Tailwind CSS"],
       image: "bg-gradient-to-br from-muted/80 to-muted/30",
-    },
-    {
-      title: "AI Content Generator",
-      description: "AI-powered content creation tool that helps users generate engaging content for various platforms.",
-      tech: ["Next.js", "OpenAI API", "TypeScript"],
-      image: "bg-gradient-to-br from-muted/60 to-muted/20",
-    },
-    {
-      title: "Portfolio Dashboard",
-      description: "Analytics dashboard for tracking portfolio performance with interactive charts and real-time data.",
-      tech: ["React", "D3.js", "Express", "MongoDB"],
-      image: "bg-gradient-to-br from-muted to-muted/40",
     },
   ];
 

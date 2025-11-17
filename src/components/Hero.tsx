@@ -86,7 +86,7 @@ export const Hero = () => {
           </div>
         </h1>
         
-        <p className="text-xl md:text-2xl text-muted-foreground mb-12 animate-fade-in-up [animation-delay:200ms] opacity-0 [animation-fill-mode:forwards]" style={{ paddingLeft: '4rem' }}>
+        <p className="text-xl md:text-2xl text-black dark:text-white mb-12 animate-fade-in-up [animation-delay:200ms] opacity-0 [animation-fill-mode:forwards]" style={{ paddingLeft: '4rem' }}>
           2nd year | Information Engineering @UGM
         </p>
         

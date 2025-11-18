@@ -12,7 +12,7 @@ export const Projects = () => {
       repoUrl: "https://github.com/Hitchgernn/my-portfolio",
     },
     {
-      title: "Ask Me AI",
+      title: "Ask Me AI (unfinished)",
       description: "AI-powered personal FAQ assistant built with a custom RAG system to provide smart, reliable answers about me.",
       tech: ["RAG", "Fast API", "FAISS", "Groq LLM", "Next.js"],
       image: "bg-gradient-to-br from-muted/80 to-muted/30",

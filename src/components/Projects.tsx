@@ -15,8 +15,9 @@ export const Projects = () => {
       title: "Ask Me AI",
       description: "AI-powered personal FAQ assistant built with a custom RAG system to provide smart, reliable answers about me.",
       tech: ["RAG", "Fast API", "FAISS", "Groq LLM", "Next.js"],
-      image: "/projects/portfolio1.png",
+      imageUrl: "/projects/portfolio1.png",
       repoUrl: "https://github.com/Hitchgernn/askme-ai",
+      liveDemoUrl: "https://askme-ai-rho.vercel.app/",
     },
   ];
 
@@ -42,7 +43,7 @@ export const Projects = () => {
               {project.imageUrl ? (
                 <img src={project.imageUrl} alt={project.title} className="h-48 w-full object-cover rounded-t-lg" />
               ) : (
-                <div className={`h-48 ${project.image} rounded-t-lg`} />
+                <div className={`h-48 ${project.imageUrl} rounded-t-lg`} />
               )}
               <CardHeader>
                 <CardTitle className="text-2xl">{project.title}</CardTitle>
@@ -70,10 +71,14 @@ export const Projects = () => {
                       </Button>
                     </a>
                   )}
-                  <Button size="sm" className="flex-1">
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Live Demo
-                  </Button>
+                  {project.liveDemoUrl && (
+                    <a href={project.liveDemoUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
+                      <Button size="sm" className="w-full">
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        Live Demo
+                      </Button>
+                    </a>
+                  )}
                 </div>
               </CardContent>
             </Card>

@@ -53,7 +53,7 @@ export const Contact = () => {
 
   const socials = [
     { icon: <Github className="h-6 w-6" />, label: "GitHub", href: "https://github.com/Hitchgernn" },
-    { icon: <Linkedin className="h-6 w-6" />, label: "LinkedIn", href: "#" },
+    { icon: <Linkedin className="h-6 w-6" />, label: "LinkedIn", href: "https://linkedin.com/in/adnan-abdul-majid/" },
     { icon: <FaXTwitter className="h-6 w-6" />, label: "X", href: "https://x.com/hthgnn" },
   ];
 

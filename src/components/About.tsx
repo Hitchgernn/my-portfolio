@@ -11,6 +11,7 @@ export const About = () => {
     { name: "Figma", logo: "/logos/figma.png" },
     { name: "Fedora Linux", logo: "/logos/linux.png" },
     { name: "Jupyter", logo: "/logos/jupyter.png" },
+    { name: "Docker", logo: "/logos/docker.png" },
   ];
 
   return (
@@ -70,7 +71,7 @@ export const About = () => {
                     <a href="https://github.com/Hitchgernn" target="_blank" rel="noopener noreferrer" className="w-16 h-16 p-2 border border-border/50 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-primary/50">
                       <Github className="w-8 h-8" />
                     </a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" className="w-16 h-16 p-2 border border-border/50 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-primary/50">
+                    <a href="https://linkedin.com/in/adnan-abdul-majid/" target="_blank" rel="noopener noreferrer" className="w-16 h-16 p-2 border border-border/50 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-primary/50">
                       <Linkedin className="w-8 h-8" />
                     </a>
                     <a href="https://x.com/hthgnn" target="_blank" rel="noopener noreferrer" className="w-16 h-16 p-2 border border-border/50 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-105 hover:border-primary/50">

@@ -14,7 +14,7 @@ export const Projects = () => {
     {
       title: "Ask Me AI",
       description: "AI-powered personal FAQ assistant built with a custom RAG system to provide smart, reliable answers about me.",
-      tech: ["RAG", "Fast API", "FAISS", "Groq LLM", "Next.js"],
+      tech: ["RAG", "VectorDB", "FAISS", "Gemini LLM", "Next.js"],
       imageUrl: "/projects/portfolio1.png",
       repoUrl: "https://github.com/Hitchgernn/askme-ai",
       liveDemoUrl: "https://askme-ai-rho.vercel.app/",

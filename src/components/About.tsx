@@ -96,11 +96,20 @@ export const About = () => {
                     and that moment sparked my curiosity for technology. Over time, I grew especially interested 
                     in <b> AI, ML, </b> and <b> backend development,</b> and I love exploring how these fields can be used to build meaningful, 
                     real-world solutions. I enjoy creating things, experimenting with new ideas, 
-                    and constantly pushing myself to grow both technically and creatively.
+                    and constantly pushing myself to grow both technically and creatively
                   </p>
+                  <div className="flex flex-wrap gap-4 pt-5">
+                  <p> You can also check my assistant :D</p>
+                  </div>
+                    <div className="flex justify-start flex-wrap gap-4 pt-4">
+                      <a href="https://askme-ai-rho.vercel.app" target="_blank" rel="nooperner nonreferrer" className="w-60 h-24 p-2 border border-border/50 rounded-lg flex items-center justify-start gap-4 transistion-all duration-300 hover:scale-105 hover:border-primary/50">
+                      <img src="/mascot/mascot.gif" className="w-24 h-24 opacity-75"/>
+                      {/* ini nanti jadi buat class ask me*/}<div className="text-xl text-foreground text-justify">Ask Me?</div>
+                      </a>
+                    </div>
                 </CardContent>
               </Card>
-          
+      
               {/* Tools Card */}
               <Card className="mb-8">
                 <CardHeader>
